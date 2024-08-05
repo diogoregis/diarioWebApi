@@ -2,7 +2,6 @@ package br.com.diogoregis.diarioapiweb.controller;
 
 import br.com.diogoregis.diarioapiweb.model.Registro;
 import br.com.diogoregis.diarioapiweb.service.RegistroService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
