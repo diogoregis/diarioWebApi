@@ -22,7 +22,7 @@ public class RegistroService {
         return repository.findAll(sort);
     }
 
-    public Registro save (Registro registro){
+    public Registro save(Registro registro){
         return repository.save(registro);
     }
 
@@ -30,10 +30,18 @@ public class RegistroService {
         return repository.findById(id);
     }
 
-    public Registro put(Registro registro){
+    public Registro update(Registro registro){
         if(repository.existsById(registro.getId())){
             return save(registro);
         }
         return null;
+    }
+
+    public boolean deleteById(Long id){
+        if(repository.existsById(id)){
+            repository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
