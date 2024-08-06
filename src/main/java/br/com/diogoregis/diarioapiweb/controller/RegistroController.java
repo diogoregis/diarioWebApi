@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(name = "/diario")
+@RequestMapping("/diario")
 public class RegistroController {
 
     private RegistroService service;
@@ -37,7 +37,7 @@ public class RegistroController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(retorno);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteById(@PathVariable("id") Long id){
         if(service.deleteById(id)){
             return ResponseEntity.status(HttpStatus.ACCEPTED).body("!!! EXCLUIDO !!!");
