@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<div>
+    <h1>Editar Registro</h1>
+    <form th:action="@{/update}" th:object="${registro}" method="post">
+        <div class="form-group">
+            <label for="texto">Texto</label>
+            <textarea id="texto" class="form-control" th:field="*{texto}" required></textarea>
+        </div>
+        <input type="hidden" th:field="*{id}">
+        <button type="submit" class="btn btn-custom">Salvar</button>
+    </form>
+</div>
+</html>
