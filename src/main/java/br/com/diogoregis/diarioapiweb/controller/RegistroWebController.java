@@ -39,14 +39,14 @@ public class RegistroWebController {
     @PostMapping("/save")
     public String save(@ModelAttribute Registro registro) {
         service.save(registro);
-        return "redirect:/diario/list";
+        return "redirect:/list";
     }
 
     @GetMapping("/update/{id}")
     public String update(@PathVariable Long id, Model model) {
         Registro registro = service.findById(id).orElse(null);
         if (registro == null) {
-            return "redirect:/diario/list";
+            return "redirect:/list";
         }
         model.addAttribute("registro", registro);
         return "update";
