@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout (~{:: title}, ~{ :: main})}">
+<title>Diario Web - Editando</title>
 <div>
     <h1>Editar Registro</h1>
     <form th:action="@{/update}" th:object="${registro}" method="post">

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
-<div>
-    <h1>Adicionar Registro</h1>
-    <form th:action="@{/save}" th:object="${registro}" method="post">
-        <div class="form-group">
-            <label for="texto">Texto</label>
-            <textarea id="texto" class="form-control" th:field="*{texto}" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-custom">Salvar</button>
-    </form>
-</div>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout (~{:: title}, ~{ :: main})}">
+<title>Diario Web - Novo Registro</title>
+<main>
+    <div>
+        <h1>Adicionar Registro</h1>
+        <form th:action="@{/save}" th:object="${registro}" method="post">
+            <div class="form-group">
+                <label for="texto">Texto</label>
+                <textarea id="texto" class="form-control" th:field="*{texto}" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-custom">Salvar</button>
+        </form>
+    </div>
+</main>
 </html>
